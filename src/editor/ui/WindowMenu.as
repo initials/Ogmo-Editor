@@ -78,12 +78,22 @@
 			menuItem.keyEquivalent = "s";
 			menuItem.addEventListener( Event.SELECT, onSaveLevel );
 			menuFile.submenu.addItem( menuItem );
+			
+/*			//SAVE LEVEL WITH PNG
+			menuItem = new NativeMenuItem( "Save Level With PNG" );
+			menuItem.name = "save level with png";
+			menuItem.keyEquivalent = "n";
+			menuItem.addEventListener( Event.SELECT, onSaveLevelWithPNG );
+			menuFile.submenu.addItem( menuItem );	*/		
+			
+			
 			//----
 			menuItem = new NativeMenuItem( "", true );
 			menuFile.submenu.addItem( menuItem );
 			//PNG
 			menuItem = new NativeMenuItem( "Save Level as PNG" );
 			menuItem.name = "save png";
+			menuItem.keyEquivalent = "p";
 			menuItem.addEventListener( Event.SELECT, onSaveLevelAsPNG );
 			menuFile.submenu.addItem( menuItem );
 			//PNG
@@ -107,6 +117,7 @@
 			//CLEAR LAYER
 			menuItem = new NativeMenuItem( "Clear Layer" );
 			menuItem.name = "clear layer";
+			menuItem.keyEquivalent = "u";
 			menuItem.addEventListener( Event.SELECT, onClearLayer );
 			menuEdit.submenu.addItem( menuItem );
 			//----
@@ -292,6 +303,14 @@
 		{
 			Ogmo.ogmo.saveLevel();
 		}
+		
+		private function onSaveLevelWithPNG( e:Event ):void
+		{
+			
+			Ogmo.level.saveLevelAndScreenshot();
+			
+		}		
+		
 		
 		private function onSaveLevelAsPNG( e:Event ):void
 		{

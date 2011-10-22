@@ -18,6 +18,9 @@
 		public var windowTileRect:TileRectangleWindow;
 		public var windowObjectPalette:ObjectPaletteWindow;
 		public var windowObjectInfo:ObjectInfoWindow;
+		public var windowGridInfo:ObjectInfoWindow;
+		public var windowObjectGenInfo:ObjectInfoWindow;
+
 		public var windowTools:ToolWindow;
 		
 		public var tilePalette:TilePalette;
@@ -128,6 +131,106 @@
 				windowObjectInfo = new ObjectInfoWindow;
 				addChild( windowObjectInfo );
 			}
+			
+			//grid
+			if (true)
+			{
+			
+				//The Object Info Window
+				windowGridInfo = new ObjectInfoWindow;
+				addChild( windowGridInfo );
+				
+				windowGridInfo.title = "Grid Procedural Options";
+				windowGridInfo.bodyHeight = 200;
+				
+				var vm:ValueModifier;
+				vm = new EnterTextInt( 95, 0, 50, null, 0, 0, 100);
+				windowGridInfo.ui.addChild( new Label( "Num Blocks :", 0, 5, "Left", "Center" ) );
+				windowGridInfo.ui.addChild( vm );
+				vm.value = 7;
+				
+				vm = new EnterTextInt( 95, 20, 50, null, 0, 0, 100);
+				windowGridInfo.ui.addChild( new Label( "Min Width :", 0, 25, "Left", "Center" ) );
+				windowGridInfo.ui.addChild( vm );
+				vm.value = 2;
+				
+				vm = new EnterTextInt( 95, 40, 50, null, 0, 0, 100);
+				windowGridInfo.ui.addChild( new Label( "Max Width :", 0, 45, "Left", "Center" ) );
+				windowGridInfo.ui.addChild( vm );		
+				vm.value = 10;
+				
+				vm = new EnterTextInt( 95, 60, 50, null, 0, 0, 100);
+				windowGridInfo.ui.addChild( new Label( "Min Height :", 0, 65, "Left", "Center" ) );
+				windowGridInfo.ui.addChild( vm );
+				vm.value = 1;
+				
+				
+				vm = new EnterTextInt( 95, 80, 50, null, 0, 0, 100);
+				windowGridInfo.ui.addChild( new Label( "Max Height :", 0, 85, "Left", "Center" ) );
+				windowGridInfo.ui.addChild( vm );				
+				vm.value = 8;
+				
+				vm = new EnterTextInt( 95, 100, 50, null, 0, 0, 1);
+				windowGridInfo.ui.addChild( new Label( "Walls,Floor :", 0, 105, "Left", "Center" ) );
+				windowGridInfo.ui.addChild( vm );				
+				vm.value = 1;				
+				
+				vm = new EnterTextInt( 95, 120, 50, null, 0, 0, 1);
+				windowGridInfo.ui.addChild( new Label( "Whole Level :", 0, 125, "Left", "Center" ) );
+				windowGridInfo.ui.addChild( vm );				
+				vm.value = 1;
+				
+				vm = new EnterTextInt( 95, 140, 50, null, 0, 0, 100);
+				windowGridInfo.ui.addChild( new Label( "Cave Smoothing  :", 0, 145, "Left", "Center" ) );
+				windowGridInfo.ui.addChild( vm );				
+				vm.value = 6;		
+				
+				vm = new EnterTextNum( 95, 160, 50, null, 0, 0, 1.0);
+				windowGridInfo.ui.addChild( new Label( "Cave Wall Ratio  :", 0, 165, "Left", "Center" ) );
+				windowGridInfo.ui.addChild( vm );				
+				vm.value = 0.5;	
+				
+				
+				
+				//The Object Info Window
+				windowObjectGenInfo = new ObjectInfoWindow;
+				addChild( windowObjectGenInfo );
+				
+				windowObjectGenInfo.y += 250;
+				
+				windowObjectGenInfo.title = "Object Procedural Options";
+				windowObjectGenInfo.bodyHeight = 200;
+				
+				vm = new EnterTextInt( 95, 0, 50, null, 0, 0, 100);
+				windowObjectGenInfo.ui.addChild( new Label( "Num Objects :", 0, 5, "Left", "Center" ) );
+				windowObjectGenInfo.ui.addChild( vm );
+				vm.value = 10;
+				
+				vm = new EnterTextInt( 95, 20, 50, null, 0, 0, 1);
+				windowObjectGenInfo.ui.addChild( new Label( "Top :", 0, 25, "Left", "Center" ) );
+				windowObjectGenInfo.ui.addChild( vm );
+				vm.value = 1;
+				
+				vm = new EnterTextInt( 95, 40, 50, null, 0, 0, 1);
+				windowObjectGenInfo.ui.addChild( new Label( "Right :", 0, 45, "Left", "Center" ) );
+				windowObjectGenInfo.ui.addChild( vm );
+				vm.value = 0;
+				
+				vm = new EnterTextInt( 95, 60, 50, null, 0, 0, 1);
+				windowObjectGenInfo.ui.addChild( new Label( "Bottom :", 0, 65, "Left", "Center" ) );
+				windowObjectGenInfo.ui.addChild( vm );
+				vm.value = 0;			
+				
+				vm = new EnterTextInt( 95, 80, 50, null, 0, 0, 1);
+				windowObjectGenInfo.ui.addChild( new Label( "Left :", 0, 85, "Left", "Center" ) );
+				windowObjectGenInfo.ui.addChild( vm );
+				vm.value = 0;				
+				
+				
+				
+			}
+			
+			
 			
 			//Tool window
 			addChild(windowTools = new ToolWindow);

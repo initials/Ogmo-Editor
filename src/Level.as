@@ -199,8 +199,15 @@
 			bg.graphics.endFill();
 		}
 		
+		public function saveLevelAndScreenshot():void
+		{
+			this.saveScreenshot();
+			Ogmo.ogmo.saveLevel();
+		}
+		
 		public function saveScreenshot():void
 		{
+			
 			currentLayer.active = false;
 			
 			var bd:BitmapData = new BitmapData( _levelWidth, _levelHeight );

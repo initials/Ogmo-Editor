@@ -125,6 +125,27 @@
 		 */
 		static public var point:Point = new Point;
 		
+		
+		/**
+		 * The latest grid level
+		 */
+		static public var gridLevel:Array = new Array;
+		
+		/**
+		 * Width in tiles
+		 */
+		static public var widthInTiles:int = new int;
+		
+		/**
+		 * Height in tiles
+		 */
+		static public var heightInTiles:int = new int;				
+			
+		/**
+		 * Grid size
+		 */
+		static public var gridSize:int = new int;			
+		
 		public function Ogmo()
 		{
 			ogmo = this;
@@ -149,6 +170,7 @@
 				mac 			= false;
 				keycode_ctrl 	= 17;
 			}
+			
 		}
 		
 		private function init(e:Event):void

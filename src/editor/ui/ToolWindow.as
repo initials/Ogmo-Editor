@@ -34,14 +34,21 @@ package editor.ui
 		[Embed(source = '../../../assets/tool_selectarea.png')]
 		static private const ImgSelectArea:Class;
 		
-		private const GRID_TOOLS:Array 		= [ToolGridPencil, ToolGridFill, ToolGridRectangle];
-		private const GRID_IMAGE:Array		= [ImgPaint, ImgFill, ImgFillRect];
+		
+		[Embed(source = '../../../assets/tool_random.png')]
+		static private const ImgRandom:Class;
+		[Embed(source = '../../../assets/tool_cave.png')]
+		static private const ImgCave:Class;		
+		
+		
+		private const GRID_TOOLS:Array 		= [ToolGridPencil, ToolGridFill, ToolGridRectangle, ToolGridSelectArea,ToolGridRandom, ToolGridCave];
+		private const GRID_IMAGE:Array		= [ImgPaint, ImgFill, ImgFillRect, ImgSelectArea, ImgRandom, ImgCave];
 		
 		private const TILE_TOOLS:Array 		= [ToolTilePlace, ToolTileEyedrop, ToolTileRectangle, ToolTileSpecialRect];
 		private const TILE_IMAGE:Array		= [ImgPaint, ImgEyedrop, ImgFillRect, ImgSpecialRect];
 		
-		private const OBJECT_TOOLS:Array	= [ToolObjectPaint, ToolObjectSelect, ToolObjectTransform, ToolObjectNodes];
-		private const OBJECT_IMAGE:Array	= [ImgPaint, ImgSelect, ImgTransform, ImgNodes];
+		private const OBJECT_TOOLS:Array	= [ToolObjectPaint, ToolObjectSelect, ToolObjectTransform, ToolObjectNodes, ToolObjectRandom];
+		private const OBJECT_IMAGE:Array	= [ImgPaint, ImgSelect, ImgTransform, ImgNodes, ImgRandom];
 		
 		private var tools:Array;
 		
@@ -95,8 +102,11 @@ package editor.ui
 			var t:ToolButton;
 			for (var i:int = 0; i < tools.length; i++)
 			{
-				t = new ToolButton(3 + i * 35, 3, arrI[i], tools[i]);
-				ui.addChild(t);
+				if (arrI[i] != null) 
+				{
+					t = new ToolButton(3 + i * 35, 3, arrI[i], tools[i]);
+					ui.addChild(t);
+				}
 			}
 			
 			active = (tools.length > 1);
