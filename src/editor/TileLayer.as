@@ -14,6 +14,8 @@ package editor
 	
 	public class TileLayer extends Layer implements Undoes
 	{
+		
+		trace("sdf");
 		static private const UNDO_LIMIT:uint = 15;
 		
 		private var _onlyTileset:Tileset;

@@ -79,6 +79,13 @@
 			menuItem.addEventListener( Event.SELECT, onSaveLevel );
 			menuFile.submenu.addItem( menuItem );
 			
+			//SAVE
+			menuItem = new NativeMenuItem( "Save Level Plus" );
+			menuItem.name = "save level plus";
+			menuItem.keyEquivalent = "f";
+			menuItem.addEventListener( Event.SELECT, onSaveLevelPlus );
+			menuFile.submenu.addItem( menuItem );			
+			
 /*			//SAVE LEVEL WITH PNG
 			menuItem = new NativeMenuItem( "Save Level With PNG" );
 			menuItem.name = "save level with png";
@@ -303,6 +310,11 @@
 		{
 			Ogmo.ogmo.saveLevel();
 		}
+		
+		private function onSaveLevelPlus( e:Event ):void
+		{
+			Ogmo.ogmo.saveLevelPlus();
+		}		
 		
 		private function onSaveLevelWithPNG( e:Event ):void
 		{

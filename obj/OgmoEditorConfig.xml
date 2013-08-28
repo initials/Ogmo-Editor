@@ -4,8 +4,8 @@
 <flex-config>
   <target-player>10.0</target-player>
   <benchmark>false</benchmark>
-  <use-network>false</use-network>
   <static-link-runtime-shared-libraries>true</static-link-runtime-shared-libraries>
+  <use-network>false</use-network>
   <compiler>
     <define append="true">
       <name>CONFIG::debug</name>
@@ -17,16 +17,28 @@
     </define>
     <define append="true">
       <name>CONFIG::timeStamp</name>
-      <value>'16/10/2011'</value>
+      <value>'28/08/2013'</value>
+    </define>
+    <define append="true">
+      <name>CONFIG::air</name>
+      <value>true</value>
+    </define>
+    <define append="true">
+      <name>CONFIG::mobile</name>
+      <value>false</value>
+    </define>
+    <define append="true">
+      <name>CONFIG::desktop</name>
+      <value>true</value>
     </define>
     <verbose-stacktraces>true</verbose-stacktraces>
     <source-path append="true">
-      <path-element>C:\_Files\flixel\projects\AriffWambeck-Ogmo-Editor-a099b6d\src</path-element>
+      <path-element>C:\_Files\actionscript\AriffWambeck-Ogmo-Editor-a099b6d\AriffWambeck-Ogmo-Editor-a099b6d\src</path-element>
       <path-element>C:\Program Files (x86)\FlashDevelop\Library\AS3\classes</path-element>
     </source-path>
   </compiler>
   <file-specs>
-    <path-element>C:\_Files\flixel\projects\AriffWambeck-Ogmo-Editor-a099b6d\src\Ogmo.as</path-element>
+    <path-element>C:\_Files\actionscript\AriffWambeck-Ogmo-Editor-a099b6d\AriffWambeck-Ogmo-Editor-a099b6d\src\Ogmo.as</path-element>
   </file-specs>
   <default-background-color>#FFFFFF</default-background-color>
   <default-frame-rate>30</default-frame-rate>

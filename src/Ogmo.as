@@ -483,6 +483,28 @@
 			setWindowTitle();
 		}
 		
+		
+		public function saveLevelPlus():void
+		{
+			tempFile = new File(Ogmo.project.savingDirectory);
+			tempFile.addEventListener(Event.SELECT, onSaveLevelSelectPlus, false, 0, true);
+			tempFile.save(level.xml, level.levelName);
+			
+		}
+		
+		private function onSaveLevelSelectPlus(e:Event):void
+		{ 	
+			level.levelName = tempFile.name;
+			level.saved 	= true;
+			showMessage("Saved Level As:\n" + tempFile.name);
+			tempFile = null;
+			
+			//set the window title
+			setWindowTitle();
+			
+			lookForLevel();
+		}		
+		
 		public function lookForLevel():void
 		{
 			tempFile = new File;
